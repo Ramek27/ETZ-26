@@ -21,11 +21,31 @@ void setup() {
   pinMode(EN_X, OUTPUT);
   pinMode(MS1_X, OUTPUT);
   pinMode(MS2_X, OUTPUT);
+
+  pinMode(button_pin, INPUT_PULLUP);
+  pinMode(led_pin, OUTPUT);
+
+  oled.init();
+  oled.setScale(1);
+  oled.clear();
 }
 
+int l[MAX_ROWS][2];
+int n = 0;
+
 void loop() {
-  moveStepY(-5000);
-  delay(2000);
-  moveStepY(5000);
-  delay(2000);
+  while (digitalRead(button_pin)) {}
+  Serial.println("STOP");
+  receiveArray(l, n);
+
+  oled.clear();
+  for (int i = 0; i < n; i++) {
+    oled.setCursor(0, i);
+    oled.print(l[i][0]);
+    oled.print(" ");
+    oled.print(l[i][1]);
+  }
+
+  delay(1000);
+  exit(0);
 }

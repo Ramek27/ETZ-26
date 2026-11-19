@@ -3,6 +3,11 @@
 // Libs
 #include <Arduino.h>
 #include <math.h>
+#include <GyverOLED.h>
+
+
+// Objects
+GyverOLED<SSD1306_128x64, OLED_NO_BUFFER> oled;
 
 
 // Pins
@@ -24,7 +29,12 @@
 #define MS1_X 30
 #define MS2_X 31
 
+#define led_pin 36     // Красный светодиод
+#define button_pin 23  // Тактовая кнопка
+
 
 // Values
 const int delY = 800;
 const int delX = 150;
+
+const int MAX_ROWS = 65;
