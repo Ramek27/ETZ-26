@@ -28,24 +28,27 @@ void setup() {
   oled.init();
   oled.setScale(1);
   oled.clear();
+
+  pinMode(34, OUTPUT);
 }
 
 int l[MAX_ROWS][2];
 int n = 0;
 
 void loop() {
-  while (digitalRead(button_pin)) {}
-  Serial.println("STOP");
-  receiveArray(l, n);
+  digitalWrite(34, 1);
+  // while (digitalRead(button_pin)) {}
+  // Serial.println("STOP");
+  // receiveArray(l, n);
 
-  oled.clear();
-  for (int i = 0; i < n; i++) {
-    oled.setCursor(0, i);
-    oled.print(l[i][0]);
-    oled.print(" ");
-    oled.print(l[i][1]);
-  }
+  // oled.clear();
+  // for (int i = 0; i < constrain(n, 0, 8); i++) {
+  //   oled.setCursor(0, i);
+  //   oled.print(l[i][0]);
+  //   oled.print(" ");
+  //   oled.print(l[i][1]);
+  // }
 
-  delay(1000);
-  exit(0);
+  // delay(1000);
+  // exit(0);
 }
