@@ -31,10 +31,11 @@ GyverOLED<SSD1306_128x64, OLED_NO_BUFFER> oled;
 
 #define led_pin 36     // Красный светодиод
 #define button_pin 23  // Тактовая кнопка
+#define magnet_pin 34  // Электромагнит
 
 
 // Values
 const int delY = 800;
-const int delX = 150;
+const int delX = 50;
 
 const int MAX_ROWS = 65;
