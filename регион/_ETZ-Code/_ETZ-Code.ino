@@ -22,6 +22,10 @@ void setup() {
   pinMode(MS1_X, OUTPUT);
   pinMode(MS2_X, OUTPUT);
 
+  setStepMode(MS1_L, MS2_L, 8);
+  setStepMode(MS1_R, MS2_R, 8);
+  setStepMode(MS1_X, MS2_X, 8);
+
   pinMode(button_pin, INPUT_PULLUP);
   pinMode(led_pin, OUTPUT);
 
@@ -31,12 +35,15 @@ void setup() {
 }
 
 void loop() {
-  moveStepX(8000);
-  delay(1000);
-  moveStepY(1000);
-  delay(1000);
-  moveStepX(-8000);
-  delay(1000);
-  moveStepY(-1000);
-  delay(1000);
+  oledPrint(67, 0, 0, 1, 2);
+  oledPrint("KUKAREKU", 2, 2, 0, 1);
+  delay(100000);
+  // moveStepX(8000);
+  // delay(1000);
+  // moveStepY(1000);
+  // delay(1000);
+  // moveStepX(-8000);
+  // delay(1000);
+  // moveStepY(-1000);
+  // delay(1000);
 }

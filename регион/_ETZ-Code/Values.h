@@ -35,7 +35,7 @@ GyverOLED<SSD1306_128x64, OLED_NO_BUFFER> oled;
 
 
 // Values
-const int delY = 800;
-const int delX = 50;
+const int delY = 200;
+const int delX = 90;
 
 const int MAX_ROWS = 65;
